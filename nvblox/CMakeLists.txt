@@ -59,7 +59,7 @@ add_nvblox_static_library(nvblox_gpu_hash
     src/gpu_hash/mesh_layer_specialization.cu
     src/gpu_hash/gpu_set.cu
   LINK_LIBRARIES_PUBLIC
-    stdgpu
+    stdgpu::stdgpu
     nvblox_eigen
   LINK_LIBRARIES_PRIVATE
     glog::glog
@@ -182,8 +182,6 @@ add_subdirectory(experiments)
 # EXPORT #
 ##########
 include(GNUInstallDirs)
-
-set_target_properties(stdgpu PROPERTIES INTERFACE_LINK_LIBRARIES "")
 
 install(
     TARGETS nvblox_lib nvblox_gpu_hash nvblox_datasets nvblox_eigen fuse_3dmatch fuse_replica
